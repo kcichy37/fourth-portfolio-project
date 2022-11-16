@@ -35,3 +35,11 @@ nav a{
     background-color: #392722;
     color: #DCCAB6;    
 }
+
+.card-title{
+    font-size: 175%;
+}
+
+.navbar-nav{
+    margin:0 auto;
+}
