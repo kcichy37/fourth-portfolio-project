@@ -1,3 +1,13 @@
 from django.shortcuts import render
+from django.views import generic, View
+from .models import Booking
 
-# Create your views here.
+
+def bookingform(request):
+
+    items = Booking.objects.all()
+    context = {
+        'items': items
+    }
+
+    return render(request, 'base.html', context)

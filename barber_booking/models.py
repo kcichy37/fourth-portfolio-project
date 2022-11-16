@@ -45,7 +45,7 @@ class Booking(models.Model):
     time = models.TimeField(choices=TIME_CHOICES)
     barber = models.CharField(max_length=100, choices=BARBER_CHOICES)
     created_on = models.DateTimeField(auto_now_add=True)
-    service = models.CharField(max_length=100, choices=SERVICE_CHOICES)
+    service = models.CharField(max_length=100, choices=SERVICE_CHOICES, null=True)
 
     class Meta:
         ordering = ["created_on"]
