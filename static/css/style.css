@@ -1,0 +1,24 @@
+body{
+    font-family: 'Merriweather', sans-serif;
+    background-color: #F4F4F4;
+}
+
+.logo{
+    font-size: 450%;
+}
+
+.headings{
+    font-family: 'Abril Fatface', sans-serif;
+    color: #F0A500;
+    font-weight: lighter;
+}
+
+nav a{
+    font-size: 150%;
+}
+
+
+.bg-color{
+    background: rgb(15,15,13);
+    background: linear-gradient(135deg, rgba(15,15,13,1) 62%, rgba(240,165,0,1) 95%, rgba(240,165,0,1) 100%); 
+}
