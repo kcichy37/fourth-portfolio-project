@@ -42,7 +42,7 @@ class Booking(models.Model):
     email = models.EmailField()
     phone = models.CharField(max_length=50)
     date = models.DateField()
-    time = models.TimeField(choices=TIME_CHOICES)
+    time = models.CharField(max_length=10, choices=TIME_CHOICES)
     barber = models.CharField(max_length=100, choices=BARBER_CHOICES)
     created_on = models.DateTimeField(auto_now_add=True)
     service = models.CharField(max_length=100, choices=SERVICE_CHOICES, null=True)
