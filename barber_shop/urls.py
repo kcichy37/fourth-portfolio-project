@@ -19,6 +19,7 @@ from barber_booking import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", views.bookingform, name="bookingform"),
+    path('', views.index, name='home'),
+    path('booking_page/', views.bookingform, name="bookingform"),
     path('accounts/', include('allauth.urls'))
 ]

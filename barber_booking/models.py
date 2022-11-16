@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 SERVICE_CHOICES = (
@@ -38,9 +39,9 @@ BARBER_CHOICES = (
 
 
 class Booking(models.Model):
-    full_name = models.CharField(max_length=200, unique=True)
-    email = models.EmailField()
-    phone = models.CharField(max_length=50)
+    full_name = models.CharField(User, max_length=200, unique=True)
+    email = models.EmailField(User)
+    phone = models.CharField(User, max_length=50,)
     date = models.DateField()
     time = models.CharField(max_length=10, choices=TIME_CHOICES)
     barber = models.CharField(max_length=100, choices=BARBER_CHOICES)
