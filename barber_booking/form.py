@@ -6,7 +6,7 @@ import datetime
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ('date', 'time', 'barber',
+        fields = ('name', 'surname', 'date', 'time', 'barber',
                   'service',)
         widgets = {
             'date': forms.DateInput(

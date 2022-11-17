@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import pre_save
 
 
 SERVICE_CHOICES = (
@@ -39,22 +40,24 @@ BARBER_CHOICES = (
 
 
 class Booking(models.Model):
-    full_name = models.CharField(User, max_length=200)
-    email = models.EmailField(User)
-    phone = models.CharField(User, max_length=50,)
+    name = models.CharField(max_length=200, null=True)
+    surname = models.CharField(max_length=200, null=True)
+    email = models.EmailField()
     date = models.DateField()
     time = models.CharField(max_length=10, choices=TIME_CHOICES)
     barber = models.CharField(max_length=100, choices=BARBER_CHOICES)
     created_on = models.DateTimeField(auto_now_add=True)
     service = models.CharField(max_length=100, choices=SERVICE_CHOICES,
                                null=True)
+    approved = models.BooleanField(default=False)
 
     class Meta:
         ordering = ["created_on"]
 
 
 class Querie(models.Model):
-    full_name = models.CharField(max_length=200, unique=True)
+    name = models.CharField(max_length=200, null=True)
+    surname = models.CharField(max_length=200, null=True)
     email = models.EmailField()
     created_on = models.DateTimeField(auto_now_add=True)
     query = models.TextField()
