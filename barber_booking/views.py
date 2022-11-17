@@ -20,4 +20,5 @@ def bookingform(request):
         form.save()
     else:
         form = BookingForm()
+
     return render(request, 'booking.html', {'form': BookingForm})
