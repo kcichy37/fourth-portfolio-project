@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
-    'cripsy_forms'
+    'crispy_forms',
     'barber_booking'
 ]
 

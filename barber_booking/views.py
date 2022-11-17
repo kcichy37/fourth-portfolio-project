@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponseRedirect
 from .models import Booking
+from .form import BookingForm
 
 
 def index(request):
@@ -17,4 +18,4 @@ def bookingform(request):
         'items': items
     }
 
-    return render(request, 'booking.html', context)
+    return render(request, 'booking.html', context = {'bookingform': BookingForm()})
