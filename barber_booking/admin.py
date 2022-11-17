@@ -4,10 +4,10 @@ from .models import Booking, Querie
 
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'phone', 'date', 'time', 'barber',
-                    'created_on')
+    list_display = ('full_name', 'phone', 'service', 'barber', 'date', 'time')
     search_field = ('full_name', 'barber')
     list_filter = ('barber', 'date')
+    actions = ['confirm_booking']
 
 
 @admin.register(Querie)

@@ -7,11 +7,11 @@
 {% if user.is_authenticated %}
 <div class="container">
     <h2>Make a booking!</h2>
-    <form method="post">
-        {{bookingform | crispy}}
-        {%csrf_token%}
+    <form method="POST">
+        {{form | crispy}}
+        {% csrf_token %}
+        <button type="submit" class="btn, btn-color">Book</button>
     </form>
-    <button type="submit" class="btn, btn-color">Book</button>
 </div>
 {%endif%}
 {% endblock content %}
