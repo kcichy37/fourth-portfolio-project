@@ -3,17 +3,22 @@
 {% block content %}
 
 <div class="container">
+    <h2 class="headings">Approved bookings</h2>
     <div class="row">
-        {%for bookings in my_booking%}
-        <div class="col-sm-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+        {%for booking in my_booking%}
+            {%if booking.approved == True%}
+            <div class="col-sm-3">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title headings">{{booking.service}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted headings">With {{booking.barber}}</h6>
+                        <p class="card-text">Your booking for {{booking.date}} at {{booking.time}} has been approved!</p>
+                        <a href="" class="btn btn-color align-self-end mt-auto" tabindex="-1" role="button"
+                        aria-disabled="true">Primary link</a>
+                    </div>
                 </div>
             </div>
-        </div>
+            {%endif%}
         {%endfor%}
     </div>
 </div>
@@ -21,19 +26,24 @@
 <br>
 
 <<div class="container">
+    <h2 class="headings">Pending bookings</h2>
     <div class="row">
-        {%for bookings in my_booking%}
+        {%for booking in my_booking%}
+        {% if booking.approved == False%}
         <div class="col-sm-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="card h-100">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title headings">{{booking.service}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted headings">{{booking.barber}}</h6>
+                        <p class="card-text">Your booking for {{booking.date}} at {{booking.time}} is waiting for approval</p>
+                        <a href="" class="btn btn-color align-self-end mt-auto" tabindex="-1" role="button"
+                        aria-disabled="true">Primary link</a>
                 </div>
             </div>
         </div>
+        {%endif%}
         {%endfor%}
     </div>
-    </div>
+</div>
 
 {% endblock content %}
