@@ -7,13 +7,11 @@ from allauth.account.forms import SignupForm
 
 
 def index(request):
-
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html')
 
 
 def bookingform(request):
-
     form = BookingForm(data=request.POST)
     if form.is_valid():
         form.instance.email = request.user.email
@@ -22,3 +20,9 @@ def bookingform(request):
         form = BookingForm()
 
     return render(request, 'booking.html', {'form': BookingForm})
+
+
+def mybooking(request):
+    my_booking = Booking.objects.all()
+    return render(request, 'mybookings.html',
+                  {'my_booking': my_booking})
