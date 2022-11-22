@@ -12,6 +12,10 @@ def index(request):
 
 
 def bookingform(request):
+    """
+        Posts data to booking form
+        and renders the booking page.
+    """
     form = BookingForm(data=request.POST)
     if form.is_valid():
         form.instance.username = request.user
@@ -23,12 +27,24 @@ def bookingform(request):
 
 
 def mybooking(request):
-    my_booking = Booking.objects.filter(username=User.objects.get(username=request.user))
-    return render(request, 'mybookings.html',
+    """
+        Renders users bookings
+        on my_booking.html, bookings
+        are filtered by users username.
+    """
+    my_booking = Booking.objects.filter(username=User.objects.get(
+                                        username=request.user))
+    return render(request, 'my_booking.html',
                   {'my_booking': my_booking})
 
 
 def editbooking(request, booking_id):
+    """
+        Enables editing by fetching
+        bookings ID's and creating a
+        new form with old information
+        for updating.
+    """
     booking = Booking.objects.get(id=booking_id)
     form = BookingForm(request.POST or None, instance=booking)
     if form.is_valid():
@@ -40,7 +56,7 @@ def editbooking(request, booking_id):
                    'form': form})
 
 
-def deletebooking(request, booking_id):
+def cancelbooking(request, booking_id):
     booking = Booking.objects.get(id=booking_id)
     booking.delete()
     return redirect('mybooking')

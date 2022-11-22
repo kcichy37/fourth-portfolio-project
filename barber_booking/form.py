@@ -4,6 +4,11 @@ import datetime
 
 
 class BookingForm(forms.ModelForm):
+    """
+        Booking form which
+        creates a form template
+        that is viewed on booking.html.
+    """
     class Meta:
         model = Booking
         fields = ('name', 'surname', 'date', 'time', 'barber',

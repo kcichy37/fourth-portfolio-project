@@ -2,17 +2,20 @@
 
 {% block content %}
 
-{%load crispy_forms_tags%}
 
+{%load crispy_forms_tags%}
 <div class="container">
+    <!-- If user is logged in, then booking form will display -->
     {%if user.is_authenticated%}
     <h2>Make a booking!</h2>
     <form method="POST">
-        {{form | crispy}}
+        <!-- Booking form -->
         {% csrf_token %}
+        {{form | crispy}}
         <button type="submit" class="btn, btn-color">Book</button>
     </form>
     {%else%}
+    <!-- If user isn't logged in, a message allowing user to login/register will display -->
     <h2 class=" headings">To make a booking you need to log in</h2>
     {%endif%}
 </div>

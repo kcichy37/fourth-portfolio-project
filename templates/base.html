@@ -21,6 +21,8 @@
 </head>
 
 <body class="d-flex flex-column h-100">
+
+  <!-- Navigation bar -->
   <nav class="bg-color navbar-expand-lg text-center">
     <div class="container-fluid">
       <a class="navbar-brand headings logo" href="#">Barbers</a>
@@ -59,12 +61,14 @@
     </div>
   </nav>
 
+  <!-- Content from templates -->
   <main>
     {% block content %}
     <!-- Content Goes here -->
     {% endblock content %}
   </main>
 
+  <!-- Footer -->
   <footer class="footer mt-auto py-3 bg-color">
     <p class="m-0 text-center text-white"></p>
     <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>

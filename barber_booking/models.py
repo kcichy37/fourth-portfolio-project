@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.db.models.signals import pre_save
 
 
+# Choice of services for user to pick from.
 SERVICE_CHOICES = (
     ("Kids haircut (under 16)", "Kids haircut (under 16)"),
     ("Kids Skin Fade (under 16)", "Kids Skin Fade (under 16)"),
@@ -15,6 +16,7 @@ SERVICE_CHOICES = (
     ("Senior Cut (Over 65)", "Senior Cut (Over 65)")
 )
 
+# Choice of time for user to pick from.
 TIME_CHOICES = (
     ("09:00", "09:00"),
     ("09:45", "09:45"),
@@ -29,6 +31,7 @@ TIME_CHOICES = (
     ("16:30", "16:30"),
 )
 
+# Choice of barbers for users to pick from.
 BARBER_CHOICES = (
     ("Tom", "Tom"),
     ("Jason", "Jason"),
@@ -40,6 +43,11 @@ BARBER_CHOICES = (
 
 
 class Booking(models.Model):
+    """
+        Booking model containing
+        all booking information +
+        registered user information.
+    """
     name = models.CharField(max_length=200, null=True)
     surname = models.CharField(max_length=200, null=True)
     username = models.CharField(max_length=200, null=True)
@@ -52,10 +60,20 @@ class Booking(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ["created_on"]
+        """
+            Ordering of bookings
+            in Admins panel.
+        """
+
+        ordering = ["-created_on"]
 
 
 class Querie(models.Model):
+    """
+        Queries model containing
+        basic information a user
+        has to provide for Admin.
+    """
     name = models.CharField(max_length=200, null=True)
     surname = models.CharField(max_length=200, null=True)
     email = models.EmailField()
@@ -63,4 +81,8 @@ class Querie(models.Model):
     query = models.TextField()
 
     class Meta:
-        ordering = ["created_on"]
+        """
+            Ordering of bookings
+            in Admin panel.
+        """
+        ordering = ["-created_on"]

@@ -4,6 +4,7 @@
 <div class="container">
 <h1>Edit</h1>
 <form action="" method="POST">
+    <!-- Booking form for editing -->
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Update" calss="btn btn-primary">
