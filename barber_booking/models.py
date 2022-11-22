@@ -42,7 +42,7 @@ BARBER_CHOICES = (
 class Booking(models.Model):
     name = models.CharField(max_length=200, null=True)
     surname = models.CharField(max_length=200, null=True)
-    email = models.EmailField()
+    username = models.CharField(max_length=200, null=True)
     date = models.DateField()
     time = models.CharField(max_length=10, choices=TIME_CHOICES)
     barber = models.CharField(max_length=100, choices=BARBER_CHOICES)

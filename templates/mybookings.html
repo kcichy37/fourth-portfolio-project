@@ -29,6 +29,7 @@
     <h2 class="headings">Pending bookings</h2>
     <div class="row">
         {%for booking in my_booking%}
+        {%if booking.email == booking.email%}
         {% if booking.approved == False%}
         <div class="col-sm-3">
             <div class="card h-100">
@@ -41,6 +42,7 @@
                 </div>
             </div>
         </div>
+        {%endif%}
         {%endif%}
         {%endfor%}
     </div>

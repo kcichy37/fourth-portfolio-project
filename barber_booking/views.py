@@ -3,7 +3,7 @@ from django.views import View
 from django.http import HttpResponseRedirect
 from .models import Booking
 from .form import BookingForm
-from allauth.account.forms import SignupForm
+from django.contrib.auth.models import User
 
 
 def index(request):
@@ -14,7 +14,7 @@ def index(request):
 def bookingform(request):
     form = BookingForm(data=request.POST)
     if form.is_valid():
-        form.instance.email = request.user.email
+        form.instance.username = request.user
         form.save()
     else:
         form = BookingForm()
@@ -23,6 +23,6 @@ def bookingform(request):
 
 
 def mybooking(request):
-    my_booking = Booking.objects.all()
+    my_booking = Booking.objects.filter(username=User.objects.get(username=request.user))
     return render(request, 'mybookings.html',
                   {'my_booking': my_booking})
