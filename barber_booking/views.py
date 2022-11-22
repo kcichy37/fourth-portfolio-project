@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect
 from django.views import View
 from django.http import HttpResponseRedirect
 from .models import Booking
@@ -30,5 +30,11 @@ def mybooking(request):
 
 def editbooking(request, booking_id):
     booking = Booking.objects.get(id=booking_id)
+    form = BookingForm(request.POST or None, instance=booking)
+    if form.is_valid():
+        form.save()
+        return redirect('mybooking')
+
     return render(request, 'edit_booking.html',
-                  {'booking': booking_id})
+                  {'booking': booking_id,
+                   'form': form})
