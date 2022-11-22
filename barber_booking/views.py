@@ -38,3 +38,9 @@ def editbooking(request, booking_id):
     return render(request, 'edit_booking.html',
                   {'booking': booking_id,
                    'form': form})
+
+
+def deletebooking(request, booking_id):
+    booking = Booking.objects.get(id=booking_id)
+    booking.delete()
+    return redirect('mybooking')

@@ -14,7 +14,7 @@
                     <h6 class="card-subtitle mb-2 text-muted headings">With {{booking.barber}}</h6>
                     <p class="card-text">Your booking for {{booking.date}} at {{booking.time}} has been approved!</p>
                     <a href="" class="btn btn-color align-self-end mt-auto" tabindex="-1" role="button"
-                        aria-disabled="true">Primary link</a>
+                        aria-disabled="true">Delete</a>
                 </div>
             </div>
         </div>
@@ -37,8 +37,12 @@
                     <h6 class="card-subtitle mb-2 text-muted headings">{{booking.barber}}</h6>
                     <p class="card-text">Your booking for {{booking.date}} at {{booking.time}} is waiting for approval
                     </p>
-                    <a href="{% url 'editbooking' booking.id %}" class="btn btn-color align-self-end mt-auto" tabindex="-1" role="button"
-                        aria-disabled="true">Edit booking</a>
+                    <div class="flex-row">
+                        <a href="{% url 'editbooking' booking.id %}" class="btn btn-color"
+                            tabindex="-1" role="button" aria-disabled="true">Edit booking</a>
+                        <a href="{% url 'deletebooking' booking.id %}" class="btn btn-color"
+                            tabindex="-1" role="button" aria-disabled="true">Delete</a>
+                    </div>
                 </div>
             </div>
         </div>
