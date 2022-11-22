@@ -26,3 +26,9 @@ def mybooking(request):
     my_booking = Booking.objects.filter(username=User.objects.get(username=request.user))
     return render(request, 'mybookings.html',
                   {'my_booking': my_booking})
+
+
+def editbooking(request, booking_id):
+    booking = Booking.objects.get(id=booking_id)
+    return render(request, 'edit_booking.html',
+                  {'booking': booking_id})
