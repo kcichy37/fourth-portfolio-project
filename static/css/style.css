@@ -104,3 +104,8 @@ hr:not([size]) {
     color: #DCCAB6;
     height: 10rem;
 }
+
+.allauthforms{
+    text-align: center;
+    margin-top: 8rem;
+}
