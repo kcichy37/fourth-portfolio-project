@@ -3,13 +3,12 @@
 {% block content %}
 <div class="container">
     <h1>Edit</h1>
-
+    {{user.id}}
+    {{booking.username.id}}
     <form action="" method="POST">
         <!-- Booking form for editing -->
         {% csrf_token %}
         {{ form.as_p }}
-        {{user.id}}
-        {{form.username}}
         <input type="submit" value="Update" calss="btn btn-primary">
     </form>
 </div>

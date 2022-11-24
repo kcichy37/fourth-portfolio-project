@@ -9,6 +9,8 @@
     <div class="form-group">
         <form method="POST">
             {%csrf_token%}
+            {{user.id}}
+            {{booking.username.id}}
             <button type="submit" class="btn, btn-color">Yes</button>
         </form>
     </div>

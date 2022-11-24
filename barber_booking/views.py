@@ -50,9 +50,12 @@ def editbooking(request, booking_id):
     """
     booking = get_object_or_404(Booking, id=booking_id)
     form = BookingForm(request.POST or None, instance=booking)
-    if form.is_valid():
-        form.save()
-        return redirect('mybooking')
+    if not (booking.username.id == request.user.id):
+        return redirect('home')
+    else:
+        if form.is_valid():
+            form.save()
+            return redirect('mybooking')
 
     return render(request, 'edit_booking.html',
                   {'booking': booking_id,
@@ -62,9 +65,11 @@ def editbooking(request, booking_id):
 @login_required
 def cancelbooking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
-    if request.method == 'POST':
-        booking.username.id == request.user.id
-        booking.delete()
-        return redirect(mybooking)
+    if not (booking.username.id == request.user.id):
+        return redirect('home')
+    else:
+        if request.method == 'POST':
+            booking.delete()
+            return redirect(mybooking)
 
-    return render(request, 'delete_booking.html', {'booking': booking})
+        return render(request, 'delete_booking.html', {'booking': booking})
