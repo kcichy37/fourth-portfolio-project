@@ -1,6 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
-from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 from .models import Booking
 from .form import BookingForm
 from django.contrib.auth.models import User
@@ -11,6 +11,7 @@ def index(request):
     return render(request, 'index.html')
 
 
+@login_required
 def bookingform(request):
     """
         Posts data to booking form
@@ -27,6 +28,7 @@ def bookingform(request):
     return render(request, 'booking.html', {'form': BookingForm})
 
 
+@login_required
 def mybooking(request):
     """
         Renders users bookings
@@ -34,11 +36,12 @@ def mybooking(request):
         are filtered by users username.
     """
     my_booking = Booking.objects.filter(username=User.objects.get(
-                                        username=request.user))                                     
+                                        username=request.user))
     return render(request, 'my_booking.html',
                   {'my_booking': my_booking})
 
 
+@login_required
 def editbooking(request, booking_id):
     """
         Enables editing by fetching
@@ -57,7 +60,11 @@ def editbooking(request, booking_id):
                    'form': form})
 
 
+@login_required
 def cancelbooking(request, booking_id):
-    booking = Booking.objects.get(id=booking_id)
-    booking.delete()
-    return redirect('mybooking')
+    booking = get_object_or_404(Booking, id=booking_id)
+    if request.method == 'POST':
+        booking.delete()
+        return redirect(mybooking)
+
+    return render(request, 'delete_booking.html', {'booking': booking})

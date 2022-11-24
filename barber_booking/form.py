@@ -15,5 +15,5 @@ class BookingForm(forms.ModelForm):
                   'service',)
         widgets = {
             'date': forms.DateInput(
-                attrs={'type': 'date', 'min': datetime.datetime.now().date()}),
-        }
+                attrs={'type': 'date', 'min': datetime.datetime.now().date()})}
+
