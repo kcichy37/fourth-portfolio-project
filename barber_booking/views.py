@@ -35,8 +35,7 @@ def mybooking(request):
         on my_booking.html, bookings
         are filtered by users username.
     """
-    my_booking = Booking.objects.filter(username=User.objects.get(
-                                        username=request.user))
+    my_booking = Booking.objects.filter(username=request.user)
     return render(request, 'my_booking.html',
                   {'my_booking': my_booking})
 
@@ -49,7 +48,7 @@ def editbooking(request, booking_id):
         new form with old information
         for updating.
     """
-    booking = Booking.objects.get(id=booking_id)
+    booking = get_object_or_404(Booking, id=booking_id)
     form = BookingForm(request.POST or None, instance=booking)
     if form.is_valid():
         form.save()
@@ -64,6 +63,7 @@ def editbooking(request, booking_id):
 def cancelbooking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     if request.method == 'POST':
+        booking.username.id == request.user.id
         booking.delete()
         return redirect(mybooking)
 
