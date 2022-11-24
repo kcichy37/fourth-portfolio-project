@@ -20,6 +20,7 @@ def bookingform(request):
     if form.is_valid():
         form.instance.username = request.user
         form.save()
+        return redirect('mybooking')
     else:
         form = BookingForm()
 
@@ -33,7 +34,7 @@ def mybooking(request):
         are filtered by users username.
     """
     my_booking = Booking.objects.filter(username=User.objects.get(
-                                        username=request.user))
+                                        username=request.user))                                     
     return render(request, 'my_booking.html',
                   {'my_booking': my_booking})
 
