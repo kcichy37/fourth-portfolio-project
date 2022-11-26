@@ -88,15 +88,12 @@ nav a {
 }
 
 hr {
-    margin: 0 0 50px;
-    color: #000;
-    background-color: currentColor;
-    border: 0;
-    opacity: 1;
+    color: #DCCAB6;
 }
 
 hr:not([size]) {
-    height: 50px;
+    height: 0.3rem;
+    text-align: center;
 }
 
 .details{
@@ -108,4 +105,9 @@ hr:not([size]) {
 .allauthforms{
     text-align: center;
     margin-top: 8rem;
+}
+
+iframe{
+    margin-top: 1.5rem;
+    border: 10px groove #392722;
 }

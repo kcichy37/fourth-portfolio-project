@@ -64,6 +64,10 @@ def editbooking(request, booking_id):
 
 @login_required
 def cancelbooking(request, booking_id):
+    """
+        Enables cancelation
+        of users bookings
+    """
     booking = get_object_or_404(Booking, id=booking_id)
     if not (booking.username.id == request.user.id):
         return redirect('home')

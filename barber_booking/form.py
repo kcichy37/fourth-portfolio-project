@@ -22,5 +22,3 @@ class BookingForm(forms.ModelForm):
         for instance in Booking.objects.all():
             if instance.name == Booking.name:
                 raise forms.ValidationError('error')
-                print('error')
-            
