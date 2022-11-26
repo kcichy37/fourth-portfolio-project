@@ -3,56 +3,60 @@
 {% block content %}
 
 <!-- Approved bookings -->
-<div class="container">
-    <h2>Approved bookings</h2>
-    <div class="row">
-        {%for booking in my_booking%}
-        {%if booking.approved == True%}
-        <div class="col-sm-3">
-            <div class="card h-100">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title headings">{{booking.service}}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted headings">{{booking.barber}}</h6>
-                    <p class="card-text">Hi {{booking.name}}, your booking for {{booking.date}} at {{booking.time}} has
-                        been approved!</p>
-                    <a href="{% url 'cancelbooking' booking.id %}" class="btn btn-color mt-auto" tabindex="-1"
-                        role="button" aria-disabled="true">Delete</a>
-                </div>
-            </div>
-        </div>
-        {%endif%}
-        {%endfor%}
-    </div>
-</div>
-
-<br>
-
-<!-- Bookings pending approval -->
-<div class="container">
-    <h2>Pending bookings</h2>
-    <div class="row">
-        {%for booking in my_booking%}
-        {% if booking.approved == False%}
-        <div class="col-sm-3">
-            <div class="card h-100">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title headings">{{booking.service}}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted headings">{{booking.barber}}</h6>
-                    <p class="card-text">Hi {{booking.name}}, your booking for {{booking.date}} at {{booking.time}} is
-                        pending approval
-                    </p>
-                    <div class="flex-row mt-auto">
-                        <a href="{% url 'editbooking' booking.id %}" class="btn btn-color" tabindex="-1" role="button"
-                            aria-disabled="true">Edit booking</a>
-                        <a href="{% url 'cancelbooking' booking.id %}" class="btn btn-color" tabindex="-1" role="button"
-                            aria-disabled="true">Delete</a>
+<section id="my-booking">
+    <div class="container content-pos">
+        <h2>Approved bookings</h2>
+        <div class="row">
+            {%for booking in my_booking%}
+            {%if booking.approved == True%}
+            <div class="col-sm-3">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title headings">{{booking.service}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted headings">{{booking.barber}}</h6>
+                        <p class="card-text">Hi {{booking.name}}, your booking for {{booking.date}} at {{booking.time}}
+                            has
+                            been approved!</p>
+                        <a href="{% url 'cancelbooking' booking.id %}" class="btn btn-color mt-auto" tabindex="-1"
+                            role="button" aria-disabled="true">Delete</a>
                     </div>
                 </div>
             </div>
+            {%endif%}
+            {%endfor%}
         </div>
-        {%endif%}
-        {%endfor%}
     </div>
-</div>
+
+    <br>
+
+    <!-- Bookings pending approval -->
+    <div class="container content-pos">
+        <h2>Pending bookings</h2>
+        <div class="row">
+            {%for booking in my_booking%}
+            {% if booking.approved == False%}
+            <div class="col-sm-3">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title headings">{{booking.service}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted headings">{{booking.barber}}</h6>
+                        <p class="card-text">Hi {{booking.name}}, your booking for {{booking.date}} at {{booking.time}}
+                            is
+                            pending approval
+                        </p>
+                        <div class="flex-row mt-auto">
+                            <a href="{% url 'editbooking' booking.id %}" class="btn btn-color" tabindex="-1"
+                                role="button" aria-disabled="true">Edit booking</a>
+                            <a href="{% url 'cancelbooking' booking.id %}" class="btn btn-color" tabindex="-1"
+                                role="button" aria-disabled="true">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {%endif%}
+            {%endfor%}
+        </div>
+    </div>
+</section>
 
 {% endblock content %}

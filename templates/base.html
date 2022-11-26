@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html class="h-100">
+<html>
 
 <head>
   <title>Barbers</title>
@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="d-flex flex-column">
+<body class="d-flex flex-column min-vh-100">
 
   <!-- Navigation bar -->
   <nav class="bg-color navbar-expand-lg text-center sticky-top">
@@ -46,17 +46,14 @@
             <a class="nav-link active headings" href="{% url 'bookingform'%}">Booking</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active headings" href="{% url 'account_logout'%}">Logout</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link active headings" href="{% url 'mybooking' %}">My Bookings</a>
+          </li>
+          <a class="nav-link active headings" href="{% url 'account_logout'%}">Logout</a>
           </li>
           {% else %}
           <li class="nav-item">
             <a class="nav-link active headings" href="{%url 'account_login'%}">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active headings" href="{%url 'account_signup'%}">reg</a>
           </li>
           {% endif %}
         </ul>

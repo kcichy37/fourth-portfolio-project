@@ -119,7 +119,7 @@ iframe {
 }
 
 .btn-style:hover {
-    background-color: #5c6732;
+    background-color: #000;
     color: #DCCAB6;
 }
 
@@ -132,6 +132,11 @@ iframe {
 }
 
 .contact-form{
+    width: 50%;
+    margin: auto;
+}
+
+.booking-form{
     width: 50%;
     margin: auto;
 }
@@ -151,4 +156,20 @@ textarea {
 
 #services {
     scroll-margin-top: 11rem;
-  }
+}
+
+.nav-left{
+    float: left;
+}
+
+a:hover{
+    color:#3d4825;
+}
+
+.content-pos{
+    margin-top: 1.5rem;
+}
+
+#my-booking .card-title{
+    color:#000;
+}

@@ -1,15 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container">
+<div class="container content-pos text-center">
     <h1>Edit</h1>
-    {{user.id}}
-    {{booking.username.id}}
     <form action="" method="POST">
         <!-- Booking form for editing -->
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Update" calss="btn btn-primary">
+        <button class="btn-style" type="submit">Update</button>
     </form>
 </div>
 
