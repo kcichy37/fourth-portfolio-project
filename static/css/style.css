@@ -27,7 +27,7 @@ h2 {
     font-family: 'Abril Fatface', sans-serif;
 }
 
-h3{
+h3 {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
@@ -78,9 +78,10 @@ nav a {
     margin: 0 auto;
 }
 
-.btn-color {
+.btn-style {
     background-color: #392722;
     color: #DCCAB6;
+    margin-top: 2rem;
 }
 
 .card-img-top {
@@ -96,18 +97,42 @@ hr:not([size]) {
     text-align: center;
 }
 
-.details{
+.details {
     background: #000;
     color: #DCCAB6;
     height: 10rem;
 }
 
-.allauthforms{
+.allauthforms {
     text-align: center;
     margin-top: 8rem;
 }
 
-iframe{
+iframe {
     margin-top: 1.5rem;
     border: 10px groove #392722;
+}
+
+.card-color {
+    color: #DCCAB6;
+}
+
+.btn-color:hover {
+    background-color: #000;
+    color: #DCCAB6;
+}
+
+.book-btn {
+    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    height: 5rem;
+    font-size: 1.4rem;
+}
+
+.contact-form{
+    width: 50%;
+    margin: auto;
 }

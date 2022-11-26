@@ -1,14 +1,22 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from django.contrib.auth.decorators import login_required
-from .models import Booking
-from .form import BookingForm
+from .models import Booking, Querie
+from .form import BookingForm, ContactUsForm
 from django.contrib.auth.models import User
 
 
 def index(request):
     # Render the HTML template index.html with the data in the context variable
-    return render(request, 'index.html')
+
+    if request.method == 'POST':
+        form = ContactUsForm(request.POST)
+        if form.is_valid():
+            form.save()
+        else:
+            form = ContactUsForm()
+
+    return render(request, 'index.html', {'form': ContactUsForm})
 
 
 @login_required
