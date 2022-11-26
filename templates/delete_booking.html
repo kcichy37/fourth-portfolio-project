@@ -9,7 +9,8 @@
     <div class="form-group">
         <form method="POST">
             {%csrf_token%}
-            <button type="submit" class="btn, btn-style">Yes</button>
+            <button type="submit" class="btn-style">Cancel</button>
+            <input type="button" value="Go back" class="btn-style" onclick="history.back()">
         </form>
     </div>
     {%endif%}

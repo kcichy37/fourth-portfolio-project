@@ -8,6 +8,7 @@
         {% csrf_token %}
         {{ form.as_p }}
         <button class="btn-style" type="submit">Update</button>
+        <input type="button" value="Go back" class="btn-style" onclick="history.back()">
     </form>
 </div>
 

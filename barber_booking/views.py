@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .models import Booking, Querie
 from .form import BookingForm, ContactUsForm
 from django.contrib.auth.models import User
@@ -29,6 +30,8 @@ def bookingform(request):
     if form.is_valid():
         form.instance.username = request.user
         form.save()
+        messages.success(
+                request, ("Your booking has been successful, it's pending confirmation."))
         return redirect('mybooking')
     else:
         form = BookingForm()
@@ -63,6 +66,8 @@ def editbooking(request, booking_id):
     else:
         if form.is_valid():
             form.save()
+            messages.success(
+                request, ("Booking edited successfully."))
             return redirect('mybooking')
 
     return render(request, 'edit_booking.html',
@@ -82,6 +87,9 @@ def cancelbooking(request, booking_id):
     else:
         if request.method == 'POST':
             booking.delete()
+            messages.success(
+                request, ("Booking cancelled successfully."))
+            return redirect('mybooking')
             return redirect(mybooking)
 
         return render(request, 'delete_booking.html', {'booking': booking})
