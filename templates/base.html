@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column">
 
   <!-- Navigation bar -->
   <nav class="bg-color navbar-expand-lg text-center sticky-top">
@@ -36,7 +36,10 @@
             <a class="nav-link active headings" aria-current="page" href="{%url 'home'%}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active headings" aria-current="page" href="#">Contact us</a>
+            <a class="nav-link active headings" aria-current="page" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active headings" aria-current="page" href="#contact-us">Contact us</a>
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">

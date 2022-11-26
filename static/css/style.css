@@ -70,7 +70,7 @@ nav a {
 }
 
 .card-title {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #DCCAB6;
 }
 
@@ -113,19 +113,18 @@ iframe {
     border: 10px groove #392722;
 }
 
-.card-color {
+.card-p {
     color: #DCCAB6;
+    font-size: 0.7rem;
 }
 
-.btn-color:hover {
-    background-color: #000;
+.btn-style:hover {
+    background-color: #5c6732;
     color: #DCCAB6;
 }
 
 .book-btn {
     margin: auto;
-    margin-top: auto;
-    margin-bottom: auto;
     margin-top: 4rem;
     margin-bottom: 4rem;
     height: 5rem;
@@ -136,3 +135,20 @@ iframe {
     width: 50%;
     margin: auto;
 }
+
+label{
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+textarea {
+    height: 10rem;
+}
+
+#contact-us h2{
+    margin-top: 1rem;
+}
+
+#services {
+    scroll-margin-top: 11rem;
+  }
