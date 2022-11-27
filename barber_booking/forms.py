@@ -1,4 +1,4 @@
-from .models import Booking, Querie
+from .models import Booking, Query
 from django import forms
 import datetime
 
@@ -29,7 +29,7 @@ class BookingForm(forms.ModelForm):
 
 class ContactUsForm(forms.ModelForm):
     class Meta:
-        model = Querie
+        model = Query
         fields = (
             "name",
             "surname",

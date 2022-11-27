@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Booking, Querie
+from .models import Booking, Query
 from .forms import BookingForm, ContactUsForm
 from django.contrib.auth.models import User
 

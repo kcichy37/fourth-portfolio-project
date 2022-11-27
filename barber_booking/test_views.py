@@ -1,2 +1,2 @@
 from django.test import TestCase
-from .models import Booking, Querie
+from .models import Booking, Query

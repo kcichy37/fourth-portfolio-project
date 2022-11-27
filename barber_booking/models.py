@@ -56,7 +56,8 @@ class Booking(models.Model):
     time = models.CharField(max_length=10, choices=TIME_CHOICES)
     barber = models.CharField(max_length=100, choices=BARBER_CHOICES)
     created_on = models.DateTimeField(auto_now_add=True)
-    service = models.CharField(max_length=100, choices=SERVICE_CHOICES, null=True)
+    service = models.CharField(
+        max_length=100, choices=SERVICE_CHOICES, null=True)
     approved = models.BooleanField(default=False)
 
     class Meta:
@@ -68,7 +69,7 @@ class Booking(models.Model):
         ordering = ["-created_on"]
 
 
-class Querie(models.Model):
+class Query(models.Model):
     """
     Queries model containing
     basic information a user

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Booking, Querie
+from .models import Booking, Query
 
 
 @admin.register(Booking)
@@ -41,7 +41,7 @@ class BookingAdmin(admin.ModelAdmin):
         queryset.update(approved=True)
 
 
-@admin.register(Querie)
+@admin.register(Query)
 class QueryAdmin(admin.ModelAdmin):
     list_display = (
         "name",
