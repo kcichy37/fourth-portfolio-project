@@ -24,5 +24,6 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path("mybookings/", views.mybooking, name="mybooking"),
     path("editbooking/<booking_id>", views.editbooking, name="editbooking"),
-    path("cancelbooking/<booking_id>", views.cancelbooking, name="cancelbooking"),
+    path("cancelbooking/<booking_id>", views.cancelbooking,
+         name="cancelbooking"),
 ]
