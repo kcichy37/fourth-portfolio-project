@@ -4,6 +4,22 @@ body {
     letter-spacing: 2.5px;
 }
 
+/*--------------------------------------------Colours*/
+
+.bg-color {
+    background: #000;
+    box-shadow: 0px 0.5px 10px 8px #000
+}
+
+.red{
+    color: #ff0000;
+}
+
+.brown{
+    color:#392722;
+}
+
+/*--------------------------------------------Header styles*/
 .logo {
     font-size: 450%;
 }
@@ -42,80 +58,105 @@ h3 {
     font-size: 3rem;
 }
 
-.shadow {
-    box-shadow: 0px 0.5px 10px 8px #000;
+/*--------------------------------------------Nav style*/
+
+.navbar-nav {
+    margin: 0 auto;
+}
+
+nav a:hover {
+    color: #3d4825;
 }
 
 nav a {
     font-size: 150%;
 }
 
-
-.bg-color {
-    background: #000;
-    box-shadow: 0px 0.5px 10px 8px #000
+.nav-link:hover {
+    color: #3d4825;
 }
 
-.card-padding {
+.shadow {
+    box-shadow: 0px 0.5px 10px 8px #000;
+}
+
+.navbar-toggler-icon {
+    margin-bottom: 1rem;
+}
+
+/*--------------------------------------------Service cards*/
+#services .card-padding {
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
-.c-height {
-    height: 500px
-}
-
 .card {
     background-color: #000;
+    border: 10px groove #392722;
 }
 
-.card-title {
+#services .card-title {
     font-size: 1rem;
     color: #DCCAB6;
 }
 
-.navbar-nav {
-    margin: 0 auto;
+#services .card-img-top {
+    height: 11.5rem;
 }
+
+#services .card-p {
+    color: #DCCAB6;
+    font-size: 0.7rem;
+}
+
+#services .card-text{
+    font-size: 0.7rem;
+}
+
+/*--------------------------------------------My booking cards*/
+
+.carousel-height {
+    height: 500px
+}
+
+#my-booking .card-title {
+    color: #DCCAB6;
+    font-size: 1.5rem;
+}
+
+#my-booking .card-subtitle{
+    font-size: 1rem;
+    color: #DCCAB6;
+}
+
+#my-booking .row{
+    margin-bottom: 2rem;
+}
+
+#my-booking .card-text{
+    color: #DCCAB6;
+    font-size: 1rem;
+}
+
+#my-booking .red:hover{
+    color: #770000;
+}
+
+#my-booking .brown:hover{
+    color:#392722;
+}
+
+#my-booking a{
+    text-decoration: none;
+    margin-right: 5rem;
+}
+
+/*--------------------------------------------Button styles*/
 
 .btn-style {
     background-color: #392722;
     color: #DCCAB6;
     margin-top: 2rem;
-}
-
-.card-img-top {
-    height: 11.5rem;
-}
-
-hr {
-    color: #DCCAB6;
-}
-
-hr:not([size]) {
-    height: 0.3rem;
-    text-align: center;
-}
-
-.details {
-    background: #000;
-    color: #DCCAB6;
-    height: 10rem;
-}
-
-.allauthforms {
-    text-align: center;
-    margin-top: 8rem;
-}
-
-iframe {
-    margin-top: 1.5rem;
-    border: 10px groove #392722;
-}
-
-.card-p {
-    color: #DCCAB6;
-    font-size: 0.7rem;
 }
 
 .btn-style:hover {
@@ -131,17 +172,50 @@ iframe {
     font-size: 1.4rem;
 }
 
-.contact-form{
+/*--------------------------------------------Index page styles*/
+
+hr {
+    color: #DCCAB6;
+}
+
+hr:not([size]) {
+    height: 0.3rem;
+    text-align: center;
+}
+
+.details {
+    background: #000;
+    color: #DCCAB6;
+    height: 100%;
+
+}
+
+#contact-us h2 {
+    margin-top: 1rem;
+}
+
+#services {
+    scroll-margin-top: 11rem;
+}
+
+/*--------------------------------------------Form styles*/
+
+.allauthforms {
+    text-align: center;
+    margin-top: 8rem;
+}
+
+.contact-form {
     width: 50%;
     margin: auto;
 }
 
-.booking-form{
+.booking-form {
     width: 50%;
     margin: auto;
 }
 
-label{
+label {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
 }
@@ -150,26 +224,65 @@ textarea {
     height: 10rem;
 }
 
-#contact-us h2{
-    margin-top: 1rem;
+/*--------------------------------------------iframe*/
+
+iframe {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 10px groove #392722;
+    width:800px;
+    height:450px;
 }
 
-#services {
-    scroll-margin-top: 11rem;
+
+/*--------------------------------------------Media Queries*/
+
+@media(max-width: 1138px){
+    
+    iframe{
+        width:600px;
+        height:550px;
+    }
 }
 
-.nav-left{
-    float: left;
+@media(max-width: 840px){
+    
+    iframe{
+        height:350px;
+    }
+
+    .carousel-height{
+        height: 300px;
+    }
+
 }
 
-a:hover{
-    color:#3d4825;
+@media(max-width: 640px){
+    
+    iframe{
+        width:400px;
+        height:250px;
+    }
+
+    .carousel-height{
+        height: 250px;
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
 
 .content-pos{
-    margin-top: 1.5rem;
+    margin-top: 5rem;
 }
 
-#my-booking .card-title{
-    color:#000;
-}
+

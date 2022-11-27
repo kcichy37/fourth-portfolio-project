@@ -7,24 +7,31 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Booking',
+            name="Booking",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('full_name', models.CharField(max_length=200, unique=True)),
-                ('email', models.EmailField(max_length=254)),
-                ('phone', models.CharField(max_length=50)),
-                ('date', models.DateField()),
-                ('time', models.TimeField()),
-                ('barber', models.CharField(max_length=100)),
-                ('created_on', models.DateTimeField(auto_now_add=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("full_name", models.CharField(max_length=200, unique=True)),
+                ("email", models.EmailField(max_length=254)),
+                ("phone", models.CharField(max_length=50)),
+                ("date", models.DateField()),
+                ("time", models.TimeField()),
+                ("barber", models.CharField(max_length=100)),
+                ("created_on", models.DateTimeField(auto_now_add=True)),
             ],
             options={
-                'ordering': ['created_on'],
+                "ordering": ["created_on"],
             },
         ),
     ]

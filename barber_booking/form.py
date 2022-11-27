@@ -5,21 +5,34 @@ import datetime
 
 class BookingForm(forms.ModelForm):
     """
-        Booking form which
-        creates a form template
-        that is viewed on booking.html.
+    Booking form which
+    creates a form template
+    that is viewed on booking.html.
     """
+
     class Meta:
         model = Booking
-        fields = ('name', 'surname', 'date', 'time', 'barber',
-                  'service',)
+        fields = (
+            "name",
+            "surname",
+            "date",
+            "time",
+            "barber",
+            "service",
+        )
         widgets = {
-            'date': forms.DateInput(
-                attrs={'type': 'date', 'min': datetime.datetime.now().date()})}
+            "date": forms.DateInput(
+                attrs={"type": "date", "min": datetime.datetime.now().date()}
+            )
+        }
 
 
 class ContactUsForm(forms.ModelForm):
-
     class Meta:
         model = Querie
-        fields = ('name', 'surname', 'email', 'query',)
+        fields = (
+            "name",
+            "surname",
+            "email",
+            "query",
+        )

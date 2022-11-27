@@ -6,23 +6,61 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('barber_booking', '0002_querie'),
+        ("barber_booking", "0002_querie"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='booking',
-            name='service',
-            field=models.CharField(choices=[('Kids haircut (under 16)', 'Kids haircut (under 16)'), ('Kids Skin Fade (under 16)', 'Kids Skin Fade (under 16)'), ('Gents Haircut', 'Gents Haircut'), ('Gents Haircut & Beard Trim', 'Gents Haircut & Beard Trim'), ('Gents Skin Fade', 'Gents Skin Fade'), ('Gents Skin Fade & Beard Trim', 'Gents Skin Fade & Beard Trim'), ('Buzz Cut (One level all over)', 'Buzz Cut (One level all over)'), ('Beard Trim', 'Beard Trim'), ('Senior Cut (Over 65)', 'Senior Cut (Over 65)')], max_length=100, null=True),
+            model_name="booking",
+            name="service",
+            field=models.CharField(
+                choices=[
+                    ("Kids haircut (under 16)", "Kids haircut (under 16)"),
+                    ("Kids Skin Fade (under 16)", "Kids Skin Fade (under 16)"),
+                    ("Gents Haircut", "Gents Haircut"),
+                    ("Gents Haircut & Beard Trim", "Gents Haircut & Beard Trim"),
+                    ("Gents Skin Fade", "Gents Skin Fade"),
+                    ("Gents Skin Fade & Beard Trim", "Gents Skin Fade & Beard Trim"),
+                    ("Buzz Cut (One level all over)", "Buzz Cut (One level all over)"),
+                    ("Beard Trim", "Beard Trim"),
+                    ("Senior Cut (Over 65)", "Senior Cut (Over 65)"),
+                ],
+                max_length=100,
+                null=True,
+            ),
         ),
         migrations.AlterField(
-            model_name='booking',
-            name='barber',
-            field=models.CharField(choices=[('Tom', 'Tom'), ('Jason', 'Jason'), ('Harry', 'Harry'), ('Tony', 'Tony'), ('Brian', 'Brian'), ('Ricardo', 'Ricardo')], max_length=100),
+            model_name="booking",
+            name="barber",
+            field=models.CharField(
+                choices=[
+                    ("Tom", "Tom"),
+                    ("Jason", "Jason"),
+                    ("Harry", "Harry"),
+                    ("Tony", "Tony"),
+                    ("Brian", "Brian"),
+                    ("Ricardo", "Ricardo"),
+                ],
+                max_length=100,
+            ),
         ),
         migrations.AlterField(
-            model_name='booking',
-            name='time',
-            field=models.TimeField(choices=[('09:00', '09:00'), ('09:45', '09:45'), ('10:30', '10:30'), ('11:15', '11:15'), ('12:00', '12:00'), ('12:45', '12:45'), ('13:30', '13:30'), ('14:15', '14:15'), ('15:00', '15:00'), ('15:45', '15:45'), ('16:30', '16:30')]),
+            model_name="booking",
+            name="time",
+            field=models.TimeField(
+                choices=[
+                    ("09:00", "09:00"),
+                    ("09:45", "09:45"),
+                    ("10:30", "10:30"),
+                    ("11:15", "11:15"),
+                    ("12:00", "12:00"),
+                    ("12:45", "12:45"),
+                    ("13:30", "13:30"),
+                    ("14:15", "14:15"),
+                    ("15:00", "15:00"),
+                    ("15:45", "15:45"),
+                    ("16:30", "16:30"),
+                ]
+            ),
         ),
     ]

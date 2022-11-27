@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container content-pos text-center">
     <h1>Edit</h1>
-    <form action="" method="POST">
+    <form method="POST">
         <!-- Booking form for editing -->
         {% csrf_token %}
         {{ form.as_p }}

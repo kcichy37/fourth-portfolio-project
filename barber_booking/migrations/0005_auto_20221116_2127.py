@@ -7,23 +7,31 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('barber_booking', '0004_alter_booking_time'),
+        ("barber_booking", "0004_alter_booking_time"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='booking',
-            name='email',
-            field=models.EmailField(max_length=254, verbose_name=django.contrib.auth.models.User),
+            model_name="booking",
+            name="email",
+            field=models.EmailField(
+                max_length=254, verbose_name=django.contrib.auth.models.User
+            ),
         ),
         migrations.AlterField(
-            model_name='booking',
-            name='full_name',
-            field=models.CharField(max_length=200, unique=True, verbose_name=django.contrib.auth.models.User),
+            model_name="booking",
+            name="full_name",
+            field=models.CharField(
+                max_length=200,
+                unique=True,
+                verbose_name=django.contrib.auth.models.User,
+            ),
         ),
         migrations.AlterField(
-            model_name='booking',
-            name='phone',
-            field=models.CharField(max_length=50, verbose_name=django.contrib.auth.models.User),
+            model_name="booking",
+            name="phone",
+            field=models.CharField(
+                max_length=50, verbose_name=django.contrib.auth.models.User
+            ),
         ),
     ]

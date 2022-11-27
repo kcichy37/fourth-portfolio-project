@@ -6,12 +6,12 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('barber_booking', '0016_alter_booking_approved'),
+        ("barber_booking", "0016_alter_booking_approved"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='querie',
-            options={'ordering': ['-created_on']},
+            name="querie",
+            options={"ordering": ["-created_on"]},
         ),
     ]

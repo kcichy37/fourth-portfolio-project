@@ -6,21 +6,29 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('barber_booking', '0001_initial'),
+        ("barber_booking", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Querie',
+            name="Querie",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('full_name', models.CharField(max_length=200, unique=True)),
-                ('email', models.EmailField(max_length=254)),
-                ('created_on', models.DateTimeField(auto_now_add=True)),
-                ('query', models.TextField()),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("full_name", models.CharField(max_length=200, unique=True)),
+                ("email", models.EmailField(max_length=254)),
+                ("created_on", models.DateTimeField(auto_now_add=True)),
+                ("query", models.TextField()),
             ],
             options={
-                'ordering': ['created_on'],
+                "ordering": ["created_on"],
             },
         ),
     ]

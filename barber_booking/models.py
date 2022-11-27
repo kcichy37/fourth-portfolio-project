@@ -13,7 +13,7 @@ SERVICE_CHOICES = (
     ("Gents Skin Fade & Beard Trim", "Gents Skin Fade & Beard Trim"),
     ("Buzz Cut (One level all over)", "Buzz Cut (One level all over)"),
     ("Beard Trim", "Beard Trim"),
-    ("Senior Cut (Over 65)", "Senior Cut (Over 65)")
+    ("Senior Cut (Over 65)", "Senior Cut (Over 65)"),
 )
 
 # Choice of time for user to pick from.
@@ -38,33 +38,31 @@ BARBER_CHOICES = (
     ("Harry", "Harry"),
     ("Tony", "Tony"),
     ("Brian", "Brian"),
-    ("Ricardo", "Ricardo")
+    ("Ricardo", "Ricardo"),
 )
 
 
 class Booking(models.Model):
     """
-        Booking model containing
-        all booking information +
-        registered user information.
+    Booking model containing
+    all booking information +
+    registered user information.
     """
+
     name = models.CharField(max_length=200, null=True)
     surname = models.CharField(max_length=200, null=True)
-    username = models.ForeignKey(
-        User, on_delete=models.CASCADE, null=True
-    )
+    username = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     date = models.DateField()
     time = models.CharField(max_length=10, choices=TIME_CHOICES)
     barber = models.CharField(max_length=100, choices=BARBER_CHOICES)
     created_on = models.DateTimeField(auto_now_add=True)
-    service = models.CharField(max_length=100, choices=SERVICE_CHOICES,
-                               null=True)
+    service = models.CharField(max_length=100, choices=SERVICE_CHOICES, null=True)
     approved = models.BooleanField(default=False)
 
     class Meta:
         """
-            Ordering of bookings
-            in Admins panel.
+        Ordering of bookings
+        in Admins panel.
         """
 
         ordering = ["-created_on"]
@@ -72,10 +70,11 @@ class Booking(models.Model):
 
 class Querie(models.Model):
     """
-        Queries model containing
-        basic information a user
-        has to provide for Admin.
+    Queries model containing
+    basic information a user
+    has to provide for Admin.
     """
+
     name = models.CharField(max_length=200, null=True)
     surname = models.CharField(max_length=200, null=True)
     email = models.EmailField()
@@ -84,7 +83,8 @@ class Querie(models.Model):
 
     class Meta:
         """
-            Ordering of bookings
-            in Admin panel.
+        Ordering of bookings
+        in Admin panel.
         """
+
         ordering = ["-created_on"]
