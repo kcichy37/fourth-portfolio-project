@@ -1,108 +1,75 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# BARBER
 
-Welcome kcichy37,
+## Purpose of the project
+purpose of the project is to build a Full-Stack site based on business logic used to control a centrally owned dataset. Project has an authentication mechanism and provides role-based access to the site's data or other activities based on the dataset.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+The barber shop uses a database to build a booking logic for a business need of controling datasets of customers bookings information. Both the customer and admin are able to Create, Read, Update and Delete these datasets.
+![Responsive](/static/assets/images/readme/responsive.PNG "Responsive")
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## User Stories
+### 1) Visiting User
+- As a visiting user, I want to be able to find out information such as opening times, address and services provided by the business.
+- As a visiting user, I want to be able to register on the site for bookings.
+- As a visiting user, I want to be able to contact the business. 
 
-## Gitpod Reminders
+### 2) Registered User
+- As a registered user, I want to be able book a chosen service at a desired time and date and with my chosen barber.
+- As a registered user, I want to be able to view my bookings and know if they have been approved.
+- As a registered user, I want to be able to edit my bookings in case of wrong input or change of availability.
+- As a registered user, I want to be able to delete my bookings.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### 3) Admin
+- As an admin, I want to be able to create new bookings on the system.
+- As an admin, I want to be able to view every users bookings and the details of the booking.
+- As an admin, I want to be able to edit customers information if needed be.
+- As an admin, I want to be able to delete bookings.
+- As an admin, I want to be able to view customers queries and their contact information. 
 
-`python3 -m http.server`
+## Features
+### Header/Nav-bar
+- The navbar is a feature that is on every page, it consists 4 links and the Barber name. Home and Barber are both linked to index.html, Service and Contact us are linked accordingly with their ID's so when clikced they scroll down to the respresentative section on the index.html. 4th link is the Login which takes you to the login page.
+- For unregistered user's the navbar consists 4 links, whereas if you're registed it consits of extra Booking link, My booking link and instead of a login link, there's, a logout link.
+![Logged in navbar](/static/assets/images/readme/logged_in_navbar.PNG "Logged in navbar")
+- When links are hovered over they turn dark green for user to recognise they are hovering over the link. 
+![NavBar](/static/assets/images/readme/navbar.PNG "NavBar") ![NavBar-green](/static/assets/images/readme/navbar-green.PNG "NavBar-green")
+- The navbar is responsive and when the width size is decrease the navbar toggles a burger button, which when pressed shows a list of the links.
+![Burger navbar](/static/assets/images/readme/burger.PNG "Burger navbar")
 
-A blue button should appear to click: _Make Public_,
+### Picture Carousel
+- The home page has a picture carousel with 3 images, it changes the pictures by itself, but in addition it has buttons for user to change picuters.
+![Picture Carousel](/static/assets/images/readme/piccar1.PNG "Picture Carousel")![Picture Carousel](/static/assets/images/readme/piccar2.PNG "Picture Carousel")![Picture Carousel](/static/assets/images/readme/piccar3.PNG "Picture Carousel")
 
-Another blue button should appear to click: _Open Browser_.
+### Information and Google maps
+- Under the picture carousel there's a little section with the key business details such as, where to find us, how to get in touch and opening times.
+- Besides all this information theres iframe of google maps and pin-pointed location where the barber shop is located.
+![Details And iframe](/static/assets/images/readme/details_iframe.PNG "Details And iframe")
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Service's provided by the Barber shop 
+- The services that the business provides are presented in cards with pictures of the service accompanied by a title and price
+- At the bottom of the service section there's a book button. however if user is not signed in that book button is a log in button.
+![Services](/static/assets/images/readme/services.PNG "Services")
 
-A blue button should appear to click: _Make Public_,
+### Contact us
+- The contact details are highlighted in the details area, however at the bottom of the home page theres a form for any user to fill out with their query 
+- The form requires a Name, Surname, Email, and the Query, if these are not filled out then the form cannot be submitted.
+![Contact us](/static/assets/images/readme/Contact_us.PNG "Contact us")
 
-Another blue button should appear to click: _Open Browser_.
+### Footer
+- Footer is on every page, with simple social media icons that lead to represantitve social media.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### Login/Register/logout
+- The login/register/logout form have been provided by the django-allauth add on, they are presented on the page in a minimalistic form.
+![Login](/static/assets/images/readme/login.PNG "Login")![Resgister](/static/assets/images/readme/Register.PNG "Resgister")![Sign out](/static/assets/images/readme/signout.PNG "Sign out")
 
-To log into the Heroku toolbelt CLI:
+### Booking page
+- Booking page is a simple booking form for the user to fill out, once filled out and all required fields are filled out the submition will take user to their booking page.
+![Booking](/static/assets/images/readme/booking.PNG "Booking")
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+### My bookings
+- My bookings page consists of two sections the Approved booking section and Pending bookings section 
+- Approved bookings only show in approve section once Admin approves the pending booking
+![Approved](/static/assets/images/readme/Approved_booking.PNG "Approved")
+- Pending booking show straight after a booking is made
+![Pending](/static/assets/images/readme/Pending_booking.PNG "Pending")
+- Bookings are presented in a card form with details such as date of booking, time, barber and service. 
+- Pending bookings have ability to delete a booking and edit a booking, whereas accepted booking only have the ability to cancel a booking.
