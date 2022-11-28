@@ -14,9 +14,11 @@ def index(request):
         form = ContactUsForm(request.POST)
         if form.is_valid():
             messages.success(
-                request, (
+                request,
+                (
                     """Your query has been sent successfully,
-                    we'll email you back shortly."""),
+                    we'll email you back shortly."""
+                ),
             )
             form.save()
         else:
@@ -36,9 +38,11 @@ def bookingform(request):
         form.instance.username = request.user
         form.save()
         messages.success(
-            request, (
+            request,
+            (
                 """Your booking has been successful,
-                it's pending confirmation.""")
+                it's pending confirmation."""
+            ),
         )
         return redirect("mybooking")
     else:
@@ -76,8 +80,7 @@ def editbooking(request, booking_id):
             messages.success(request, ("Booking edited successfully."))
             return redirect("mybooking")
 
-    return render(request, "edit_booking.html", {"booking": booking_id,
-                                                 "form": form})
+    return render(request, "edit_booking.html", {"booking": booking_id, "form": form})
 
 
 @login_required

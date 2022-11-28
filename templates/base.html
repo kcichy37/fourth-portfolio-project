@@ -17,6 +17,10 @@
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
   </script>
   <link rel="stylesheet" href="{%static 'css/style.css'%}">
+  <link rel="apple-touch-icon" sizes="180x180" href="/{% static '/assets/images/favicon/apple-touch-icon-png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static '/assets/images/favicon/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static '/assets/images/favicon/favicon-16x16.png' %}">
+  <link rel="manifest" href="/site.webmanifest">
 
 </head>
 
@@ -27,41 +31,41 @@
     <nav>
       <div class="container-fluid">
         <a class="navbar-brand headings logo" href="{%url 'home'%}">Barbers</a>
-        <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
-            <li class="nav-item">
-              <a class="nav-link active headings" aria-current="page" href="{%url 'home'%}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active headings" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active headings" href="#contact-us">Contact us</a>
-            </li>
-            {% if user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-link active headings" href="{% url 'bookingform'%}">Booking</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active headings" href="{% url 'mybooking' %}">My Bookings</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active headings" href="{% url 'account_logout'%}">Logout</a>
-            </li>
-            {% else %}
-            <li class="nav-item">
-              <a class="nav-link active headings" href="{%url 'account_login'%}">Login</a>
-            </li>
-            {% endif %}
-          </ul>
-        </div>
-      </div>
-    </nav>
+  <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
+      <li class="nav-item">
+        <a class="nav-link active headings" aria-current="page" href="{%url 'home'%}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active headings" href="#services">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active headings" href="#contact-us">Contact us</a>
+      </li>
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link active headings" href="{% url 'bookingform'%}">Booking</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active headings" href="{% url 'mybooking' %}">My Bookings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active headings" href="{% url 'account_logout'%}">Logout</a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link active headings" href="{%url 'account_login'%}">Login</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+  </div>
+  </nav>
   </header>
 
   <div class="container messages">
@@ -100,6 +104,6 @@
       alert.close();
     }, 3000);
   </script>
-</body>
+  </body>
 
 </html>
